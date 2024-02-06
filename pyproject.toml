@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "telegrambotdjango"
+version = "0.1.0"
+description = ""
+authors = ["KOA3103"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+django = "5.0.1"
+django-grappelli = "3.0.8"
+environs = "10.3.0"
+gunicorn = "21.2.0"
+pyTelegramBotAPI = "4.15.4"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
