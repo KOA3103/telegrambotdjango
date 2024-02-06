@@ -12,6 +12,7 @@ django-grappelli = "3.0.8"
 environs = "10.3.0"
 gunicorn = "21.2.0"
 pyTelegramBotAPI = "4.15.4"
+aiohttp = "3.9.3"
 
 [build-system]
 requires = ["poetry-core"]
