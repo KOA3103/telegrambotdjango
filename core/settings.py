@@ -120,3 +120,44 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+
+ADMIN_ID = env.str('I_AM')  # VETAL, NADIA, I_AM
+TRON_SCAN = env.str('TRON_SCAN')
+
+
+LOG_LEVEL =env.str('LOG_LEVEL')  # Устанавливается INFO or DEBUG в файле .env
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '{levelname} {asctime} {module} {process:d} {thread:d} {message}',
+            'style': '{',
+        },
+        'simple': {
+            'format': '{levelname} {message}',
+            'style': '{',
+        },
+    },
+
+    'handlers': {
+        'console': {
+            'level': LOG_LEVEL,
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple',
+        },
+    },
+
+    'root': {
+        'handlers': ['console'],
+        'level': LOG_LEVEL,
+    },
+
+    'loggers': {
+        'django': {
+            'handlers': ['console'],
+            'propagate': True,
+        },
+    },
+}
+
